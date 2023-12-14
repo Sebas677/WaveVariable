@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="robot" default="ur5e" />
+  <arg name="controller" default="vel" /> <!-- vel or vel_trj or vel_pos -->
+
+  <rosparam command="load" file="$(find ohrc_hw_config)/$(arg robot)/$(arg robot)_hw_config.yaml" />
+  
+  <node name="omega_wv_teleoperation_node" pkg="ohrc_bilateral_ctrl_tutorial" type="omega_wv_teleoperation"  respawn="false" output="screen">
+    <rosparam command="load" file="$(find ohrc_hw_config)/$(arg robot)/$(arg robot)_control_config_$(arg controller).yaml" />
+    <rosparam command="load" file="$(find ohrc_teleoperation)/config/omega_config.yaml" />
+    <rosparam command="load" file="$(find ohrc_bilateral_ctrl_tutorial)/config/wv_config.yaml"/>
+  </node>
+
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find ohrc_teleoperation)/config/teleoperation.rviz"/>
+</launch>

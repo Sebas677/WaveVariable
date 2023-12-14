@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<launch>
+
+    <include file="$(find ohrc_bilateral_ctrl_tutorial)/launch/omega_wv_delay_controller.launch">
+        <arg name="realtime" value="false"/>
+    </include>
+    
+
+    <include file="$(find ohrc_bilateral_ctrl_tutorial)/launch/bringup_sim_desk.launch">
+        <arg name="model" default="toroboarm_ft_sim_peg"/>
+    </include>
+    
+    
+    <include file="$(find ohrc_bilateral_ctrl_tutorial)/launch/omega_wv_delay_teleoperation.launch">
+        <arg name="robot" value="toroboarm"/>
+        <arg name="controller" value="vel"/>
+    </include>
+
+</launch>
+
+<!--TIME DELAY VERSION-->

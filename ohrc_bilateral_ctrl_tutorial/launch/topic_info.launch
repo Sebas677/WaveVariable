@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="rqt_plot" type="rqt_plot" name="rqt_plot" args="--clear-config">
+        <remap from="/plot" to="/Vs_feed"/>
+        <remap from="/plot_2" to="/forwardWave/Omega"/>
+    </node>
+</launch>
+
+<!--TIME DELAY VERSION-->

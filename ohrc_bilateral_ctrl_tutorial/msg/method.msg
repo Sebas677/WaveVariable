@@ -1,0 +1,2 @@
+geometry_msgs/Vector3 wv
+geometry_msgs/Vector3 impedance

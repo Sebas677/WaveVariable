@@ -1,0 +1,14 @@
+<launch>
+<arg name="frequency" default="2000.0"/>
+<arg name="frame" default="omega_link"/>
+<arg name="realtime" default="true"/>
+
+<node pkg="tf2_ros" type="static_transform_publisher" name="omega_link_broadcaster" args="0 0 0 3.1415926575 0 0 world omega_link" />
+<node pkg="ohrc_bilateral_ctrl_tutorial" type="omega_force_wv_td_controller" name="omega_wv_driver" output="screen">
+  <rosparam command="load" file="$(find ohrc_bilateral_ctrl_tutorial)/config/wv_config.yaml"/>
+  <param name="frequency" value="$(arg frequency)"/>
+  <param name="frame" value="$(arg frame)"/>
+  <param name="realtime" value="$(arg realtime)"/>
+</node>
+
+</launch>

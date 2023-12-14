@@ -1,0 +1,21 @@
+b: 1
+wv_b: 
+  x: 15.0
+  y: 15.0
+  z: 15.0
+#used impedance value for the WV controller related files (underdamped<b>50 overdamped)
+t_delay: 25
+#500 of t_delay is equivalent to 1 sec
+
+forces: 
+  transform: 0 
+  vel: 2
+  vs: 2
+#toggle between 0 = eefForce_eff, 1 = eefForce_base, 2 = eefForce_omega
+
+f_gain: 0.5
+#fixed to 0.5
+
+damp : 0.3
+#range from 0-1
+
