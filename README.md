@@ -42,7 +42,7 @@ roslaunch ohrc_bilateral_ctrl_tutorial omega_wv_test_delay_teleoperation.launch
 
 
 
-### **This repository intends the development of a WAVE VARIABLE CONTROLLER**
+### **Development of a WAVE VARIABLE CONTROLLER**
 
 In the following bullet points are listed the state of the art papers used as resources:
 
